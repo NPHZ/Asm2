@@ -1,0 +1,76 @@
+<!-- header top section start -->
+<!-- logo section start -->
+<div class="logo_section" style="margin-bottom: 70px;">
+   <div class="container">
+      <div class="row">
+         <h1 class="mb-5 mt-5">
+            <a href="/shop" style="text-decoration: none; color: inherit;">
+               <i class="fa-solid fa-gamepad"></i> ATN TOYS
+            </a>
+         </h1>
+      </div>
+   </div>
+</div>
+<div class="container col-md-10 text-center mt-3 mb-3">
+   <div class="row">
+      <div class="col">
+         <img src="{{ toys.image }}" class="image-border" width="350" height="400">
+         <h3 class="text text-primary mt-3">{{ toys.name }} : {{ toys.brand }}</h3>
+      </div>
+      <div class="col">
+         <h1 class="text text-danger">Product detail</h1>
+         <table class="table">
+            <tr>
+               <th>Price</th>
+               <th>${{ toys.price }}</th>
+            </tr>
+            <tr>
+               <th>Quantity</th>
+               <th>{{ toys.quantity }}</th>
+            </tr>
+            <tr>
+               <th>Description</th>
+               <th>{{ toys.description }}</th>
+            </tr>
+            <tr>
+               <th>Order quantity:</th>
+               <th>
+                  <form action="/shop/order" method="post">
+                     <input class="form-control mb-3" type="number" name="quantity" min="1" max="{{ toys.quantity }}"
+                        required>
+                     <input type="hidden" name="price" value="{{ toys.price }}">
+                     <input type="hidden" name="id" value="{{ toys._id }}">
+                     <input class="btn btn-primary" type="submit" value="order">
+                  </form>
+               </th>
+            </tr>
+         </table>
+      </div>
+   </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+   <!-- font awesome -->
+   <link rel="stylesheet" type="text/css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <!--  -->
+   <!-- owl stylesheets -->
+   <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Poppins:400,700&display=swap&subset=latin-ext"
+      rel="stylesheet">
+   <link rel="stylesheet" href="css/owl.carousel.min.css">
+   <link rel="stylesoeet" href="css/owl.theme.default.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css"
+      media="screen">

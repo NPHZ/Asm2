@@ -1,0 +1,37 @@
+<div class="container col-md-10 text-center mt-3 mb-3">
+   <div class="row">
+      <div class="col">
+         <img src="{{ figure.image }}" width="350" height="400">
+         <h3 class="text text-primary mt-3">{{ figure.name }} : {{ figure.brand }}</h3>
+      </div>
+      <div class="col">
+         <h1 class="text text-danger">Figure Detail</h1>
+         <table class="table">
+            <tr>
+               <th>Price</th>
+               <th>${{ figure.price }}</th>
+            </tr>
+            <tr>
+               <th>Quantity</th>
+               <th>{{ figure.quantity }}</th>
+            </tr>
+            <tr>
+               <th>Description</th>
+               <th>{{ figure.description }}</th>
+            </tr>
+            <tr>
+               <th>Order quantity:</th>
+               <th>
+                  <form action="/figure/order" method="post">
+                     <input class="form-control mb-3" type="number" name="quantity" min="1" max="{{ figure.quantity }}"
+                        required>
+                     <input type="hidden" name="price" value="{{ figure.price }}">
+                     <input type="hidden" name="id" value="{{ figure._id }}">
+                     <input class="btn btn-primary" type="submit" value="order">
+                  </form>
+               </th>
+            </tr>
+         </table>
+      </div>
+   </div>
+</div>

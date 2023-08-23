@@ -1,0 +1,49 @@
+<div class="container col-md-6 mt-3 mb-3 card bg-light">
+   <form action="/figure/edit/{{ figure._id }}" method="post">
+      <h1 class="text text-success text-center text-uppercase mt-3">Edit product</h1>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Full name</label>
+         <input class="form-control" type="text" name="name" value="{{ figure.name }}" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Image: </label>
+         <img src="{{figure.image}}" alt="" width="100" height="100">
+         <input class="form-control" type="url" name="image" value="{{ figure.image }}" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Price</label>
+         <input class="form-control" type="number" name="price" value="{{ figure.price }}" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Quantity</label>
+         <input class="form-control" type="number" name="quantity" value="{{ figure.quantity }}" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Category</label>
+         <select class="form-control" name="category" value="{{ figure.category }}">
+            <option value="Anime">Anime</option>
+            <option value="Game">Game</option>
+         </select>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Brand</label>
+         <input class="form-control" type="text" name="brand" value="{{ figure.brand }}" required>
+      </div>
+      <div class="form-group mt-3">
+         <label class="h5 text text-success" for="">Description</label>
+         <input class="form-control" type="text" name="description" value="{{ figure.description }}" required>
+      </div>
+      <div class="form-group text-center mt-3 mb-3">
+         <input class="btn btn-primary" type="submit" value="Edit">
+      </div>
+   </form>
+</div>
+<style>
+   img {
+      height: auto;
+      width: auto;
+   }
+   body{
+      background-color: pink;
+   }
+</style>
